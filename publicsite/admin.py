@@ -11,7 +11,7 @@ class MainSliderDataAdmin(admin.ModelAdmin):
 
 @admin.register(PolicyTerm)
 class PolicyTermAdmin(SummernoteModelAdmin):
-    summernote_fields = ('terms_of_use', 'privacy_policy', 'refund_policy')
+    summernote_fields = ('terms_of_use', 'privacy_policy', 'refund_policy', 'billing_system')
     list_display = ('create_date', 'edited_date', 'id')
 
 

@@ -24,11 +24,12 @@ class PolicyTerm(models.Model):
     terms_of_use = models.TextField(null=True, blank=True)
     privacy_policy = models.TextField(null=True, blank=True)
     refund_policy = models.TextField(null=True, blank=True)
+    billing_system = models.TextField(null=True, blank=True)
     create_date = models.DateTimeField(auto_now_add=True)
     edited_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.create_date
+        return f'{self.create_date}'
 
 
 class PublicMessage(models.Model):

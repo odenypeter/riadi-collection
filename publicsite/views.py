@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import MainSliderData, GeneralInfo
+from .models import MainSliderData, GeneralInfo, PolicyTerm
 from products.models import ProductItem, ProductCategory
 
 
@@ -36,4 +36,28 @@ def index(request):
         'slider_items': slider_data[1:],
         'categories': categories,
         'footer_categories': categories[:4]
+    })
+
+
+def terms_and_conditions(request, policy=None):
+    term = PolicyTerm.objects.first()
+
+    if policy.lower() == 'terms_use':
+        term_type = 'Terms of use'
+    elif policy.lower() == 'privacy':
+        term_type = 'Privacy policy'
+
+    elif policy.lower() == 'refund':
+        term_type = 'Refund policy'
+
+    elif policy.lower() == 'billing':
+        term_type = 'Billing system'
+
+    else:
+        term_type = 'General use'
+
+    return render(request, 'terms.html', {
+        'policy': policy,
+        'term': term,
+        'term_type': term_type
     })
