@@ -1,0 +1,7 @@
+django
+django-grappelli
+Pillow
+django-cleanup
+gunicorn
+whitenoise
+django-summernote
