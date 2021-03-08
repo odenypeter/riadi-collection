@@ -24,7 +24,7 @@ SECRET_KEY = '-_t(wsd0j!gk0&bew9%pl_rv@8x4!3zq3(@vs8koobz0ge8hz&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kikwetu.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
