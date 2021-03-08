@@ -56,8 +56,12 @@ def terms_and_conditions(request, policy=None):
     else:
         term_type = 'General use'
 
+    site_info = GeneralInfo.objects.filter(active=True).first()
+
     return render(request, 'terms.html', {
         'policy': policy,
         'term': term,
-        'term_type': term_type
+        'term_type': term_type,
+        'site_info': site_info,
+        'footer_categories': ProductCategory.objects.all()[:4]
     })
