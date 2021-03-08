@@ -33,17 +33,18 @@
         <div class="col-sm-6">
           <div class="contactinfo">
             <ul class="nav nav-pills">
-              <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-              <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+              <li><a href="#"><i class="fa fa-phone"></i> {{ site_info.phone_number }}</a></li>
+              <li><a href="#"><i class="fa fa-envelope"></i> {{ site_info.email_address }}</a></li>
             </ul>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="social-icons pull-right">
             <ul class="nav navbar-nav">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="{{ site_info.facebook_link }}"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="{{ site_info.twitter_link }}"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="{{ site_info.linkedin_link }}"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="{{ site_info.instagram_link }}"><i class="fa fa-instagram"></i></a></li>
             </ul>
           </div>
         </div>
@@ -98,10 +99,10 @@
           <div class="single-widget">
             <h2>Contact Us</h2>
             <ul class="nav nav-pills nav-stacked">
-              <li><a href="#">Street Name</a></li>
-              <li><a href="#">7288393, Berlin</a></li>
-              <li><a href="#">contact@gmail.com</a></li>
-              <li><a href="#">+49 7383 73883</a></li>
+              <li><a href="#">{{ site_info.street_name }}</a></li>
+              <li><a href="#">{{ site_info.zip_code }}, {{ site_info.city }}</a></li>
+              <li><a href="#">{{ site_info.email_address }}</a></li>
+              <li><a href="#">{{ site_info.phone_number }}</a></li>
             </ul>
           </div>
         </div>
@@ -109,10 +110,9 @@
           <div class="single-widget">
             <h2>Quick Links</h2>
             <ul class="nav nav-pills nav-stacked">
-              <li><a href="#">Shoes</a></li>
-              <li><a href="#">Sandles</a></li>
-              <li><a href="#">Bags</a></li>
-              <li><a href="#">Decors</a></li>
+              {% for item in footer_categories %}
+                <li><a href="{% url 'shop' %}?category={{ item.id }}">{{ item.category }}</a></li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -146,7 +146,7 @@
     <div class="container">
       <div class="row">
         <p class="pull-left">Copyright © 2021 KIKWETU | All rights reserved.</p>
-{#        <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>#}
+        {#        <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>#}
       </div>
     </div>
   </div>

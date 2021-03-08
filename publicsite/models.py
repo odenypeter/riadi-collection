@@ -65,5 +65,5 @@ class GeneralInfo(models.Model):
     active = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.pk
+        return f'{self.email_address}' or 'kikwetu'
 

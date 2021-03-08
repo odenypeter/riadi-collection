@@ -15,7 +15,7 @@ class ProductCategory(models.Model):
 class ProductSubcategory(models.Model):
     subcategory = models.CharField(max_length=64)
     description = models.TextField(null=True, blank=True)
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+    category = models.ForeignKey(ProductCategory, related_name='subcategories', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.subcategory
