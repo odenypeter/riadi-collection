@@ -5,3 +5,4 @@ django-cleanup
 gunicorn
 whitenoise
 django-summernote
+psycopg2-binary
