@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+  <div id="contact-page" class="container">
+    <div class="bg">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="title text-center">{{ term_type }} <strong></strong></h2>
+          {% if policy == 'terms_use' %}
+            <div>{{ term.terms_of_use|safe }}</div>
+
+          {% elif policy == 'privacy' %}
+            <div>{{ term.privacy_policy|safe }}</div>
+
+          {% elif policy == 'refund' %}
+            <div>{{ term.refund_policy|safe }}</div>
+
+          {% elif policy == 'billing' %}
+            <div>{{ term.billing_system|safe }}</div>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div><!--/#contact-page-->
+
+  <div>
+
+  </div>
+
+{% endblock %}
