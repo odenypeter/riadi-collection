@@ -137,3 +137,8 @@ GRAPPELLI_SWITCH_USER = True
 GRAPPELLI_CLEAN_INPUT_TYPES = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+try:
+    from .local import *
+except ModuleNotFoundError:
+    pass
