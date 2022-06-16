@@ -24,6 +24,9 @@ SECRET_KEY = '-_t(wsd0j!gk0&bew9%pl_rv@8x4!3zq3(@vs8koobz0ge8hz&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Default AutoField
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 ALLOWED_HOSTS = ['riadi-collection.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
@@ -132,7 +135,7 @@ STATICFILES_FINDERS = (
 )
 
 # GRAPELLI SETTINGS
-GRAPPELLI_ADMIN_TITLE = 'KIKWETU ADMIN PORTAL'
+GRAPPELLI_ADMIN_TITLE = 'RIADI-COLLECTION ADMIN PORTAL'
 GRAPPELLI_SWITCH_USER = True
 GRAPPELLI_CLEAN_INPUT_TYPES = True
 
