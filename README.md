@@ -1,2 +1,2 @@
-# kikwetu
-Kikwetu app
+# Riadi Collection
+Riadi app
