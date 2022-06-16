@@ -133,6 +133,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # GRAPELLI SETTINGS
 GRAPPELLI_ADMIN_TITLE = 'RIADI-COLLECTION ADMIN PORTAL'
