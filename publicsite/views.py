@@ -16,7 +16,7 @@ def contact(request):
 
 def index(request):
     slider_data = MainSliderData.objects.all()[:3]
-    active_slider = slider_data[0]
+    active_slider = slider_data.first()
 
     products = ProductItem.objects.all()
     recommend_set_1 = ProductItem.objects.order_by('?')
