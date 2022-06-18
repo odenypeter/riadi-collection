@@ -27,7 +27,7 @@ DEBUG = os.getenv('DEBUG', 1)
 # Default AutoField
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
-ALLOWED_HOSTS = ['riadi-collection.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['riadi-collection.herokuapp.com', 'localhost', '127.0.0.1', 'oyster-app-cyyup.ondigitalocean.app']
 
 # Application definition
 
