@@ -82,7 +82,7 @@ AUTH_USER_MODEL = 'users.User'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if bool(DEBUG):
+if bool(int(DEBUG)):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
