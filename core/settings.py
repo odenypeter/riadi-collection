@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 1)
+DEBUG = os.environ.get('DEBUG', 1)
 
 # Default AutoField
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
@@ -82,7 +82,7 @@ AUTH_USER_MODEL = 'users.User'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if bool(DEBUG) is True:
+if bool(DEBUG):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
