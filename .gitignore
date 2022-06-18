@@ -4,3 +4,4 @@ __pycache__/
 local.py
 venv/
 db.sqlite3
+uploads/

@@ -8,12 +8,6 @@ class MainSliderData(models.Model):
         upload_to='uploads',
         help_text='Image Size should be 484x441'
     )
-    price_badge_image = models.ImageField(
-        upload_to='uploads',
-        help_text='Image Size should be 172x172',
-        null=True,
-        blank=True
-    )
     active = models.BooleanField(default=True)
 
     def __str__(self):
