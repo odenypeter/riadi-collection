@@ -2,57 +2,59 @@
 {% load static %}
 {% block content %}
 
-  <section>
+<section>
     <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          {% include 'left-sidebar.html' %}
-        </div>
-
-        <div class="col-sm-9 padding-right">
-          <div class="product-details"><!--product-details-->
-            <div class="col-sm-5">
-              <div class="view-product">
-                <img src="{{ current_product.main_image.url }}" alt=""/>
-                {#                <h3>ZOOM</h3>#}
-              </div>
-
+        <div class="row">
+            <div class="col-sm-3">
+                {% include 'left-sidebar.html' %}
             </div>
-            <div class="col-sm-7">
-              <div class="product-information"><!--/product-information-->
-                <img src="images/product-details/new.jpg" class="newarrival" alt=""/>
-                <h2>{{ current_product.name }}</h2>
-                <p>Item ID: {{ current_product.product_uuid }}</p>
-{#                <img src="images/product-details/rating.png" alt=""/>#}
-                <span>
+
+            <div class="col-sm-9 padding-right">
+                <div class="product-details"><!--product-details-->
+                    <div class="col-sm-5">
+                        <div class="view-product">
+                            <img src="{{ current_product.main_image.url }}" alt=""/>
+                            {#                <h3>ZOOM</h3>#}
+                        </div>
+
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="product-information"><!--/product-information-->
+                            <img src="images/product-details/new.jpg" class="newarrival" alt=""/>
+                            <h2>{{ current_product.name }}</h2>
+                            <p>Item ID: {{ current_product.product_uuid }}</p>
+                            {#                <img src="images/product-details/rating.png" alt=""/>#}
+                            <span>
 									<span>Price €{{ current_product.price }}</span>
 									<label>Quantity:</label>
 									<input type="text" value="1" readonly/>
-{#									<button type="button" class="btn btn-fefault cart">#}
-{#										<i class="fa fa-shopping-cart"></i>#}
-{#										Add to cart#}
-{#									</button>#}
+                                {#									<button type="button" class="btn btn-fefault cart">#}
+                                {#										<i class="fa fa-shopping-cart"></i>#}
+                                {#										Add to cart#}
+                                {#									</button>#}
 								</span>
-                <p><b>Description:</b></p>
-                <p>{{ current_product.description|safe }}</p>
-{#                <p><b>Availability:</b> In Stock</p>#}
-{#                <p><b>Condition:</b> New</p>#}
-{#                <p><b>Brand:</b> E-SHOPPER</p>#}
-{#                <a href=""><img src="{% static 'images/product-details/share.png' %}" class="share img-responsive"#}
-{#                                alt=""/></a>#}
-              </div><!--/product-information-->
+                            <p><b>Description:</b></p>
+                            <p>{{ current_product.description|safe }}</p>
+                            <p>{{ current_product.specifications|safe }}</p>
+                            {#                <p><b>Availability:</b> In Stock</p>#}
+                            {#                <p><b>Condition:</b> New</p>#}
+                            {#                <p><b>Brand:</b> E-SHOPPER</p>#}
+                            {#                <a href=""><img src="{% static 'images/product-details/share.png' %}
+                            " class="share img-responsive"#}
+                            {#                                alt=""/></a>#}
+                        </div><!--/product-information-->
+                    </div>
+                </div><!--/product-details-->
+
+                <!--recommended_items-->
+                <div class="recommended_items">
+                    <h2 class="title text-center">recommended items</h2>
+                    {% include 'recommend.html' %}
+                </div>
+                <!--/recommended_items-->
+
             </div>
-          </div><!--/product-details-->
-
-          <!--recommended_items-->
-          <div class="recommended_items">
-            <h2 class="title text-center">recommended items</h2>
-            {% include 'recommend.html' %}
-          </div>
-          <!--/recommended_items-->
-
         </div>
-      </div>
     </div>
-  </section>
+</section>
 {% endblock %}
