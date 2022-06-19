@@ -33,10 +33,20 @@
                                 {#										Add to cart#}
                                 {#									</button>#}
 								</span>
+                            <p>
+                                <b>Availability:</b>
+                                {% if current_product.in_stock %}
+                                    In Stock
+                                {% else %}
+                                    Out of stock
+                                {% endif %}
+                            </p>
+
                             <p><b>Description:</b></p>
                             <p>{{ current_product.description|safe }}</p>
+
+                            <p><b>Specifications:</b></p>
                             <p>{{ current_product.specifications|safe }}</p>
-                            {#                <p><b>Availability:</b> In Stock</p>#}
                             {#                <p><b>Condition:</b> New</p>#}
                             {#                <p><b>Brand:</b> E-SHOPPER</p>#}
                             {#                <a href=""><img src="{% static 'images/product-details/share.png' %}
